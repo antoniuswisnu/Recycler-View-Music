@@ -20,19 +20,21 @@
         android:layout_toEndOf="@id/img_item_photo"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/tv_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
+            android:textColor="#252525"
             android:textStyle="bold"
             tools:text="@string/player_name" />
         <TextView
-            android:id="@+id/tv_item_detail"
+            android:id="@+id/tv_item_lyric"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="#252525"
             tools:text="@string/deskripsi" />
     </LinearLayout>
 </RelativeLayout>

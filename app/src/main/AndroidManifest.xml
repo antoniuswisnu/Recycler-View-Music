@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dicoding.picodiploma.projekakhirdicoding">
+    package="com.papb1.pertemuan7.recyclerview">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.dicoding.picodiploma.projekakhirdicoding.Desc"></activity>
-        <activity android:name="com.dicoding.picodiploma.projekakhirdicoding.About" />
-        <activity android:name="com.dicoding.picodiploma.projekakhirdicoding.MainActivity">
+        <activity android:name="com.papb1.pertemuan7.recyclerview.DetailActivity"></activity>
+        <activity android:name="com.papb1.pertemuan7.recyclerview.About" />
+        <activity android:name="com.papb1.pertemuan7.recyclerview.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

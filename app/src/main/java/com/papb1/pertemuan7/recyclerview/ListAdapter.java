@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.projekakhirdicoding;
+package com.papb1.pertemuan7.recyclerview;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +19,11 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
-    private ArrayList<Players> listPlayer;
+    private final ArrayList<Music> listMusic;
     private Context context;
 
-    public ListAdapter(ArrayList<Players> list) {
-        this.listPlayer = list;
+    public ListAdapter(ArrayList<Music> list) {
+        this.listMusic = list;
     }
 
     @NonNull
@@ -35,35 +35,35 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, final int position) {
-        final Players player = listPlayer.get(position);
+        final Music music = listMusic.get(position);
         Glide.with(holder.itemView.getContext())
-                .load(player.getPhoto())
+                .load(music.getImage())
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
-        holder.tvName.setText(player.getName());
-        holder.tvDetail.setText(player.getDeskripsi());
+        holder.tvName.setText(music.getTitle());
+        holder.tvDetail.setText(music.getLyric());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, Desc.class);
+                Intent intent = new Intent(context, DetailActivity.class);
                 Bundle bundle = new Bundle();
 
-                bundle.putString("name", player.getName());
-                bundle.putString("description", player.getDeskripsi());
-                bundle.putInt("picture", player.getPhoto());
+                bundle.putString("title", music.getTitle());
+                bundle.putString("lyric", music.getLyric());
+                bundle.putInt("picture", music.getImage());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
 
-                Toast.makeText(holder.itemView.getContext(), "" + listPlayer.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(holder.itemView.getContext(), "" + listMusic.get(holder.getAdapterPosition()).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return listPlayer.size();
+        return listMusic.size();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
@@ -74,8 +74,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             super(itemView);
             context = itemView.getContext();
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDetail = itemView.findViewById(R.id.tv_item_detail);
+            tvName = itemView.findViewById(R.id.tv_item_title);
+            tvDetail = itemView.findViewById(R.id.tv_item_lyric);
         }
     }
 }

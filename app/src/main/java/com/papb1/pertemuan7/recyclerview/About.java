@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.projekakhirdicoding;
+package com.papb1.pertemuan7.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 

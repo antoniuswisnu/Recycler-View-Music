@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.projekakhirdicoding;
+package com.papb1.pertemuan7.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,17 +14,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvPlayers;
-    private ArrayList<Players> list = new ArrayList<>();
+    private ArrayList<Music> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvPlayers = findViewById(R.id.rv_players);
+        rvPlayers = findViewById(R.id.rv_music);
         rvPlayers.setHasFixedSize(true);
 
-        list.addAll(DataPlayers.getListData());
+        list.addAll(MusicData.getListData());
         showRecyclerList();
     }
 
